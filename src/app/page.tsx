@@ -1,9 +1,7 @@
 import Image from "next/image";
 
 const Home = async () => {
-  const todosResponse = await fetch("https://jsonplaceholder.typicode.com/todos", {
-    cache: 'force-cache'
-  });
+  const todosResponse = await fetch("https://jsonplaceholder.typicode.com/todos");
   const todos: {userId: number, title: string}[] = await todosResponse.json();
 
   return (
